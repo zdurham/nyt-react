@@ -9,7 +9,7 @@ const Query = (props) => {
       <div className='panel-body'>
         <form>
           <div className='form-group'>
-            <label for='searchTerm'>Search Term</label>
+            <label htmlFor='searchTerm'>Search Term</label>
             <input 
               type='text'
               className='form-control'
@@ -20,7 +20,7 @@ const Query = (props) => {
             />
           </div>
           <div className='form-group'>
-            <label for='limit'>Number of Results to Return</label>
+            <label htmlFor='limit'>Number of Results to Return</label>
             <select name='limit' value={props.limit} className="form-control" onChange={props.handleInputChange}>
               <option>1</option>
               <option>5</option>
@@ -28,7 +28,7 @@ const Query = (props) => {
             </select>
           </div>
           <div className='form-group'>
-            <label for='startYear'>Start Year</label>
+            <label htmlFor='startYear'>Start Year</label>
             <input 
               type='text'
               className='form-control'
@@ -38,7 +38,7 @@ const Query = (props) => {
             />
           </div>
           <div className='form-group'>
-            <label for='endYear'>End Year</label>
+            <label htmlFor='endYear'>End Year</label>
             <input 
               type='text'
               className='form-control'

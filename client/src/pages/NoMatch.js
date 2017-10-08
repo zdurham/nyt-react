@@ -4,7 +4,7 @@ import Jumbotron from '../components/Jumbotron'
 
 const NoMatch = () => {
   return (
-    <div className='container'>
+    <div className='container content'>
       <Jumbotron />
       <div className='panel panel-default'>
         <div className='panel-heading'>

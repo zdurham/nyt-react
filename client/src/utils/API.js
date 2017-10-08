@@ -8,6 +8,10 @@ const API = {
 
   saveArticle: function(articleData) {
     return axios.post('/api/articles/', articleData)
+  },
+
+  getSavedArticles: function() {
+    return axios.get('/api/articles')
   }
 };
 

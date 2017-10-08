@@ -8,13 +8,13 @@ module.exports = {
       .then(dbArticle => res.json(dbArticle))
       .catch(err => console.log(err))
   },
-  // findAll: function(req, res) {
-  //   db.Book
-  //     .find(req.query)
-  //     .sort({ date: -1 })
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
+
+  findSaved: function(req, res) {
+    Article.find()
+      .sort({ date: -1 })
+      .then(dbArticle => res.json(dbArticle))
+      .catch(err => console.log(err))
+  }
   // findById: function(req, res) {
   //   db.Book
   //     .findById(req.params.id)

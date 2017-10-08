@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <div className='navbar navbar-fixed-top'>
+    <div className='navbar navbar-default navbar-fixed-top'>
       <div className='container'>
-        <ul>
+        <ul className='nav'>
           <li>
             <NavLink exact activeClassName='active' to='/'>
               Search
@@ -18,7 +18,6 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-        
       </div>
     </div>
   )
