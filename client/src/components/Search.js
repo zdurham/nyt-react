@@ -9,9 +9,8 @@ class Search extends React.Component {
    
     this.state = {
       articles: [],
-      saved: [],
       searchTerm: '',
-      limit: '',
+      limit: 1,
       startYear: '',
       endYear: ''
     }
@@ -31,16 +30,34 @@ class Search extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     
-
+    let limit = this.state.limit;
+    // let start = new Date(this.state.startYear);
+    // let end = new Date(this.state.endYear);
     API.getArticles(this.state.searchTerm)
-      .then(results => this.setState({articles: results.data.response.docs}))
+      .then(results => {
+      this.setState({articles: results.data.response.docs.slice(0, limit)})})
+      .catch(err => console.warn(err));
+  }
+
+  handleClear = (event) => {
+    event.preventDefault();
+
+    this.setState({articles: []})
+
+  }
+
+  saveArticle = (articleObj) => {
+    API.saveArticle(articleObj)
+      .then(res => console.log(res))
       .catch(err => console.warn(err))
+    
   }
 
   render() {
     return (
       <div className='row'>
         <div className='col-sm-12'>
+
           <Query
           searchTerm = {this.state.searchTerm}
           limit = {this.state.limit}
@@ -48,8 +65,14 @@ class Search extends React.Component {
           endYear = {this.state.endYear}
           handleInputChange = {this.handleInputChange}
           handleSubmit = {this.handleSubmit}
+          handleClear = {this.handleClear}
           />
-          <Results articles = {this.state.articles}/>
+
+          <Results 
+            articles = {this.state.articles} 
+            saveArticle={this.saveArticle}
+          />
+
         </div>
       </div>   
     )

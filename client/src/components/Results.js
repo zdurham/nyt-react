@@ -13,10 +13,9 @@ const Results = (props) => {
             <ResultItem 
               key={article._id}
               title={article.headline.main}
-              author={article.byline.original}
-              desk={article.new_desk}
               date={article.pub_date}
               link={article.web_url}
+              saveArticle={props.saveArticle}
             />
           )
         })}

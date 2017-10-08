@@ -47,8 +47,11 @@ const Query = (props) => {
               name='endYear'
             />
           </div>
-          <button onClick={props.handleSubmit}>
+          <button className='btn' onClick={props.handleSubmit}>
             Submit
+          </button>
+          <button className='btn' onClick={props.handleClear}>
+            Clear Results
           </button>
         </form>
       </div>
