@@ -3,6 +3,7 @@ import React from 'react'
 const Save = (props) => {
   return (
     <button className='btn btn-success' onClick={() => props.saveArticle({
+      _id: props.id,
       title: props.title,
       link: props.link,
       date: props.date 

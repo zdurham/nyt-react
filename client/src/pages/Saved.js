@@ -1,5 +1,7 @@
 import React from 'react'
 import API from '../utils/API'
+import ResultItem from '../components/ResultItem'
+import Delete from '../components/buttons/Delete'
 
 
 
@@ -35,7 +37,18 @@ class Saved extends React.Component {
             <h3 className='panel-title'>Saved Articles</h3>
           </div>
           <div className='panel-body'>
-            
+            {this.state.savedArticles.map(article => {
+              return (
+                <ResultItem
+                  id={article._id}
+                  title={article.title}
+                  date={article.added}
+                  link={article.link}
+                >
+                <Delete />
+                </ResultItem>
+              )
+            })}
           </div>
         </div>
       </div>

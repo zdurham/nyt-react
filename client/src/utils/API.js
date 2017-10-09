@@ -12,7 +12,12 @@ const API = {
 
   getSavedArticles: function() {
     return axios.get('/api/articles')
+  },
+
+  removeSavedArticle: function(id) {
+    return axios.post(`/api/articles${id}`)
   }
+
 };
 
 export default API

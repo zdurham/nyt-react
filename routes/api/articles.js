@@ -6,7 +6,7 @@ router.get('/', articleController.findSaved)
 
 router.post("/", articleController.create)
 
-
+router.post('/:id', articleController.removeSaved)
 
 // Matches with "/api/books/:id"
 // router

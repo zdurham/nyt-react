@@ -9,6 +9,7 @@ class Search extends React.Component {
    
     this.state = {
       articles: [],
+      savedArticles: [],
       searchTerm: '',
       limit: 1,
       startYear: '',
@@ -16,7 +17,14 @@ class Search extends React.Component {
     }
   }
 
-  
+  componentDidMount() {
+    API.getSavedArticles()
+      .then(res => {
+        console.log(res.data)
+        return this.setState({savedArticles: res.data})
+      })
+      .catch(err => console.log(err))
+  }  
 
   // methods go here
   handleInputChange = (event) => {
@@ -54,6 +62,7 @@ class Search extends React.Component {
   }
 
   render() {
+    console.log(this.state.savedArticles)
     return (
       <div className='row'>
         <div className='col-sm-12'>
@@ -69,7 +78,8 @@ class Search extends React.Component {
           />
 
           <Results 
-            articles = {this.state.articles} 
+            articles={this.state.articles}
+            savedArticles={this.state.savedArticles}
             saveArticle={this.saveArticle}
           />
 

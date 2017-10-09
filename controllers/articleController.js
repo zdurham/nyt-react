@@ -14,30 +14,12 @@ module.exports = {
       .sort({ date: -1 })
       .then(dbArticle => res.json(dbArticle))
       .catch(err => console.log(err))
+  },
+
+  removeSaved: function(req, res) {
+    Article.findById({ _id: req.params.id })
+      .then(dbArticle => dbArticle.remove())
+      .then(dbArticle => res.json(dbArticle))
+      .catch(err => console.log(err))
   }
-  // findById: function(req, res) {
-  //   db.Book
-  //     .findById(req.params.id)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-  // create: function(req, res) {
-  //   db.Book
-  //     .create(req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-  // update: function(req, res) {
-  //   db.Book
-  //     .findOneAndUpdate({ _id: req.params.id }, req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-  // remove: function(req, res) {
-  //   db.Book
-  //     .findById({ _id: req.params.id })
-  //     .then(dbModel => dbModel.remove())
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // }
 };
