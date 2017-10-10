@@ -1,4 +1,9 @@
 
+body {
+  background-color: #4B8F8C;
+  background-image: url('images/brick-wall.png')
+}
+
 .nav {
   display: flex !important;
   align-items: center;
@@ -18,7 +23,7 @@ li {
 
 .btn {
   margin-left: 10px !important;
-  background-color: #1B2845;
+  background-color: #2B193D;
   color: white;
   border: 2px solid white;
   border-radius: 25px;
@@ -26,8 +31,8 @@ li {
 
 .btn:hover {
   background-color: white;
-  color: #1B2845;
-  border: 2px solid #1B2845;
+  color: #2B193D;
+  border: 2px solid #2B193D;
   border-radius: 25px;
 }
 
@@ -46,14 +51,19 @@ btn:focus {
 /* PANEL STYLING */
 
 .panel-heading {
-  background-color: #1B2845 !important;
+  background-color: #2B193D !important;
   color: white !important;
 }
 
 .panel-body {
-  background-color: #EDD382;
+  background-color: #484D6D;
 }
 
 .panel {
   border: 1px #1B2845 solid !important;
+}
+
+/* FORM STYLING */
+label {
+  color: white;
 }
