@@ -4,6 +4,7 @@ import Save from './buttons/Save'
 import Delete from './buttons/Delete'
 
 const Results = (props) => {
+
   return (
     <div className='panel panel-default'>
       <div className='panel-heading'>
@@ -13,17 +14,20 @@ const Results = (props) => {
         {props.articles.map(article => {
           return (
             <ResultItem 
+              key={article._id}
               id={article._id}
               title={article.headline.main}
               date={article.pub_date}
               link={article.web_url}>
-              {props.savedArticles.indexOf(article.headline.main) > -1 ? (
+              {props.savedArticles.find((item) => {
+                return item['_id'] === article._id
+              }) ? (
                 <Delete 
                   id={article._id}
                   title={article.headline.main}
                   date={article.pub_date}
                   link={article.web_url}
-                  deleteArticle={() => props.removeSavedArticle(article._id)}
+                  removeArticle={props.removeArticle}
                 />
               ) : (
                 <Save 

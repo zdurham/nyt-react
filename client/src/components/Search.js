@@ -18,15 +18,20 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
+    this.getSaved()
+  }  
+
+  // Load saved articles
+  getSaved() {
     API.getSavedArticles()
       .then(res => {
         console.log(res.data)
         return this.setState({savedArticles: res.data})
       })
       .catch(err => console.log(err))
-  }  
-
-  // methods go here
+  }
+  
+  // Handle input change 
   handleInputChange = (event) => {
     const {name, value} = event.target
      
@@ -35,6 +40,7 @@ class Search extends React.Component {
     })
   }
 
+  // when submit is pressed, do this
   handleSubmit = (event) => {
     event.preventDefault();
     
@@ -43,7 +49,8 @@ class Search extends React.Component {
     // let end = new Date(this.state.endYear);
     API.getArticles(this.state.searchTerm)
       .then(results => {
-      this.setState({articles: results.data.response.docs.slice(0, limit)})})
+      this.setState({articles: results.data.response.docs.slice(0, limit),
+      searchTerm: ''})})
       .catch(err => console.warn(err));
   }
 
@@ -56,9 +63,16 @@ class Search extends React.Component {
 
   saveArticle = (articleObj) => {
     API.saveArticle(articleObj)
-      .then(res => console.log(res))
+      .then(res => {
+        this.setState({savedArticles: [...this.state.savedArticles, res.data]})
+      })
+      .catch(err => console.warn(err)) 
+  }
+
+  removeArticle = (id) => {
+    API.removeSavedArticle(id)
+      .then(res => this.getSaved())
       .catch(err => console.warn(err))
-    
   }
 
   render() {
@@ -68,19 +82,20 @@ class Search extends React.Component {
         <div className='col-sm-12'>
 
           <Query
-          searchTerm = {this.state.searchTerm}
-          limit = {this.state.limit}
-          startYear = {this.state.startYear}
-          endYear = {this.state.endYear}
-          handleInputChange = {this.handleInputChange}
-          handleSubmit = {this.handleSubmit}
-          handleClear = {this.handleClear}
+            searchTerm = {this.state.searchTerm}
+            limit = {this.state.limit}
+            startYear = {this.state.startYear}
+            endYear = {this.state.endYear}
+            handleInputChange = {this.handleInputChange}
+            handleSubmit = {this.handleSubmit}
+            handleClear = {this.handleClear}
           />
 
           <Results 
             articles={this.state.articles}
             savedArticles={this.state.savedArticles}
             saveArticle={this.saveArticle}
+            removeArticle={this.removeArticle}
           />
 
         </div>

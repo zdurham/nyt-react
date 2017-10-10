@@ -4,7 +4,6 @@ import ResultItem from '../components/ResultItem'
 import Delete from '../components/buttons/Delete'
 
 
-
 class Saved extends React.Component {
   constructor(props) {
     super(props)
@@ -27,6 +26,12 @@ class Saved extends React.Component {
       .catch(err => console.log(err))
   }
 
+  removeArticle = (id) => {
+    API.removeSavedArticle(id)
+      .then(res => this.loadSaved())
+      .catch(err => console.warn(err))
+  }
+
   
 
   render() {
@@ -45,7 +50,10 @@ class Saved extends React.Component {
                   date={article.added}
                   link={article.link}
                 >
-                <Delete />
+                <Delete
+                  id={article._id}
+                  removeArticle={this.removeArticle}
+                  />
                 </ResultItem>
               )
             })}

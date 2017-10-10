@@ -15,7 +15,7 @@ const API = {
   },
 
   removeSavedArticle: function(id) {
-    return axios.post(`/api/articles${id}`)
+    return axios.post(`/api/articles/${id}`)
   }
 
 };
