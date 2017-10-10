@@ -1,0 +1,59 @@
+
+.nav {
+  display: flex !important;
+  align-items: center;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+}
+
+li {
+  list-style-type: none !important; 
+}
+
+.content {
+  margin-top: 60px;
+}
+
+/* BUTTON STYLING */
+
+.btn {
+  margin-left: 10px !important;
+  background-color: #1B2845;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #1B2845;
+  border: 2px solid #1B2845;
+  border-radius: 25px;
+}
+
+btn:focus {
+  box-shadow: none !important;
+}
+
+.btn:active {
+  size: 1.1em;
+}
+
+#submit {
+  margin-left: 0 !important;
+}
+
+/* PANEL STYLING */
+
+.panel-heading {
+  background-color: #1B2845 !important;
+  color: white !important;
+}
+
+.panel-body {
+  background-color: #EDD382;
+}
+
+.panel {
+  border: 1px #1B2845 solid !important;
+}

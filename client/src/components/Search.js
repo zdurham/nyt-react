@@ -1,7 +1,8 @@
 import React from 'react';
 import Query from './Query';
 import Results from './Results';
-import API from '../utils/API'
+import API from '../utils/API';
+
 
 class Search extends React.Component {
   constructor(props) {
@@ -76,7 +77,6 @@ class Search extends React.Component {
   }
 
   render() {
-    console.log(this.state.savedArticles)
     return (
       <div className='row'>
         <div className='col-sm-12'>
