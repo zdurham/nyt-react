@@ -2,7 +2,7 @@ import React from 'react'
 import API from '../utils/API'
 import ResultItem from '../components/ResultItem'
 import Delete from '../components/buttons/Delete'
-
+import Jumbotron from '../components/Jumbotron'
 
 class Saved extends React.Component {
   constructor(props) {
@@ -36,27 +36,30 @@ class Saved extends React.Component {
 
   render() {
     return (
-      <div className='container content'>
-        <div className='panel panel-default'>
-          <div className='panel-heading'>
-            <h3 className='panel-title'>Saved Articles</h3>
-          </div>
-          <div className='panel-body'>
-            {this.state.savedArticles.map(article => {
-              return (
-                <ResultItem
-                  id={article._id}
-                  title={article.title}
-                  date={article.added}
-                  link={article.link}
-                >
-                <Delete
-                  id={article._id}
-                  removeArticle={this.removeArticle}
-                  />
-                </ResultItem>
-              )
-            })}
+      <div>
+      <Jumbotron />
+        <div className='container-fluid content'>
+          <div className='panel panel-default'>
+            <div className='panel-heading'>
+              <h3 className='panel-title'>Saved Articles</h3>
+            </div>
+            <div className='panel-body'>
+              {this.state.savedArticles.map(article => {
+                return (
+                  <ResultItem
+                    id={article._id}
+                    title={article.title}
+                    date={article.added}
+                    link={article.link}
+                  >
+                  <Delete
+                    id={article._id}
+                    removeArticle={this.removeArticle}
+                    />
+                  </ResultItem>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>

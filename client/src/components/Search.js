@@ -3,7 +3,6 @@ import Query from './Query';
 import Results from './Results';
 import API from '../utils/API';
 
-
 class Search extends React.Component {
   constructor(props) {
     super(props)
@@ -48,10 +47,12 @@ class Search extends React.Component {
     let limit = this.state.limit;
     // let start = new Date(this.state.startYear);
     // let end = new Date(this.state.endYear);
-    API.getArticles(this.state.searchTerm)
+    API.getArticles(this.state.searchTerm, this.state.startYear, this.state.endYear)
       .then(results => {
       this.setState({articles: results.data.response.docs.slice(0, limit),
-      searchTerm: ''})})
+      searchTerm: '',
+      startYear: '',
+      endYear: '',})})
       .catch(err => console.warn(err));
   }
 
@@ -79,7 +80,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className='row'>
-        <div className='col-sm-12'>
+        <div className='col-sm-4 col-xs-12'>
 
           <Query
             searchTerm = {this.state.searchTerm}
@@ -90,7 +91,8 @@ class Search extends React.Component {
             handleSubmit = {this.handleSubmit}
             handleClear = {this.handleClear}
           />
-
+        </div>
+        <div className='col-sm-8 col-xs-12'>
           <Results 
             articles={this.state.articles}
             savedArticles={this.state.savedArticles}

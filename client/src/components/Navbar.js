@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div className='navbar navbar-default navbar-fixed-top'>
-      <div className='container'>
+      <div className='container-fluid'>
         <ul className='nav'>
           <li>
             <NavLink exact activeClassName='active' to='/'>

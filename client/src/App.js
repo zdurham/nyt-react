@@ -8,7 +8,7 @@ import Saved from './pages/Saved'
 const App = () => {
   return (
     <Router>
-      <div className='container'>
+      <div>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Main} />

@@ -1,7 +1,9 @@
 
 body {
-  background-color: #4B8F8C;
-  background-image: url('images/brick-wall.png')
+  background-image: url('images/nyt-header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .nav {
@@ -17,6 +19,23 @@ li {
 
 .content {
   margin-top: 60px;
+}
+
+/* JUMBOTRON SYLTING */
+
+.jumbotron {
+  background-image: url('images/nyt-header.jpg');
+  background-size: cover;
+  color: white;
+  height: 300px;
+  margin-top: 50px !important;
+}
+
+.jumbotron .container {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* BUTTON STYLING */
@@ -51,12 +70,12 @@ btn:focus {
 /* PANEL STYLING */
 
 .panel-heading {
-  background-color: #2B193D !important;
+  background-color: #889696 !important;
   color: white !important;
 }
 
 .panel-body {
-  background-color: #484D6D;
+  
 }
 
 .panel {
