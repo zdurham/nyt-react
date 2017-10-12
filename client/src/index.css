@@ -1,20 +1,23 @@
 
 body {
-  background-image: url('images/nyt-header.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-image: url('images/brick-wall.png');
+  font-family: 'Didact Gothic', sans-serif;
 }
 
+/* NAVBAR STYLING */
+
 .nav {
+  font-family: 'PT Sans', sans-serif;
   display: flex !important;
   align-items: center;
+  height: 50px !important;
   flex-direction: row !important;
   justify-content: flex-start !important;
 }
 
-li {
-  list-style-type: none !important; 
+.image {
+  height: 30px;
+  width: 30px;
 }
 
 .content {
@@ -24,11 +27,12 @@ li {
 /* JUMBOTRON SYLTING */
 
 .jumbotron {
-  background-image: url('images/nyt-header.jpg');
+  font-family: 'PT Sans', sans-serif;
+  background-image: url('images/stock-news.jpg');
   background-size: cover;
+  background-position: center;
   color: white;
   height: 300px;
-  margin-top: 50px !important;
 }
 
 .jumbotron .container {
@@ -42,17 +46,17 @@ li {
 
 .btn {
   margin-left: 10px !important;
-  background-color: #2B193D;
+  background-color: #6665dd;
   color: white;
   border: 2px solid white;
-  border-radius: 25px;
+  
 }
 
 .btn:hover {
   background-color: white;
-  color: #2B193D;
-  border: 2px solid #2B193D;
-  border-radius: 25px;
+  color: #6665dd;
+  border: 2px solid #6665dd;
+  
 }
 
 btn:focus {
@@ -67,22 +71,44 @@ btn:focus {
   margin-left: 0 !important;
 }
 
+.remove {
+  background-color: #A20021;
+  color: white;
+  border: 2px solid white;
+}
+
+.remove:hover {
+  background-color: white;
+  color: #A20021;
+  border: 2px solid #A20021;
+}
+
+.save {
+  background-color: #18F2B2;
+  color: white;
+  border: 2px solid white;
+}
+
+.save:hover {
+  background-color: white;
+  color: #18F2B2;
+  border: 2px solid #18F2B2;
+}
+
 /* PANEL STYLING */
 
 .panel-heading {
-  background-color: #889696 !important;
+  font-family: 'PT Sans', sans-serif;
+  background-color: #3454d1 !important;
   color: white !important;
 }
 
 .panel-body {
-  
+
 }
 
 .panel {
-  border: 1px #1B2845 solid !important;
+  border: 1px #3454d1 solid !important;
 }
 
 /* FORM STYLING */
-label {
-  color: black;
-}

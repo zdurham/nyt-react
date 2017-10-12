@@ -3,9 +3,7 @@ import React from 'react'
 const Jumbotron = () => {
   return (
     <div className='jumbotron'>
-      <div className='container'>
-        <h1>NYT REACT THINGY</h1>
-      </div>
+        <h1>New York Times Article Search</h1>
     </div>
   )
 }

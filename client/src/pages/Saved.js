@@ -36,30 +36,28 @@ class Saved extends React.Component {
 
   render() {
     return (
-      <div>
-      <Jumbotron />
-        <div className='container-fluid content'>
-          <div className='panel panel-default'>
-            <div className='panel-heading'>
-              <h3 className='panel-title'>Saved Articles</h3>
-            </div>
-            <div className='panel-body'>
-              {this.state.savedArticles.map(article => {
-                return (
-                  <ResultItem
-                    id={article._id}
-                    title={article.title}
-                    date={article.added}
-                    link={article.link}
-                  >
-                  <Delete
-                    id={article._id}
-                    removeArticle={this.removeArticle}
-                    />
-                  </ResultItem>
-                )
-              })}
-            </div>
+      <div className='container-fluid content'>
+        <Jumbotron />
+        <div className='panel panel-default'>
+          <div className='panel-heading'>
+            <h3 className='panel-title'>Saved Articles</h3>
+          </div>
+          <div className='panel-body'>
+            {this.state.savedArticles.map(article => {
+              return (
+                <ResultItem
+                  id={article._id}
+                  title={article.title}
+                  date={article.added}
+                  link={article.link}
+                >
+                <Delete
+                  id={article._id}
+                  removeArticle={this.removeArticle}
+                  />
+                </ResultItem>
+              )
+            })}
           </div>
         </div>
       </div>

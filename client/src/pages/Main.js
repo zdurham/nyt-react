@@ -8,11 +8,9 @@ class Main extends React.Component {
   // render the UI
   render() {
     return(
-      <div>
-        
-        <div className='container-fluid content'>  
-          <Search />
-        </div>
+      <div className='container-fluid content'>  
+        <Jumbotron />
+        <Search />
       </div>
     )
   }
