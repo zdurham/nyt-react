@@ -8,7 +8,7 @@ const API = {
       queryUrl = queryUrl + `&begin_date=${startDate}0101`
     }
     if (!isNaN(parseInt(endDate))) {
-      queryUrl = queryUrl + `&end_date=${endDate}0101`
+      queryUrl = queryUrl + `&end_date=${endDate}1231`
     }
     return axios.get(queryUrl)
   },
